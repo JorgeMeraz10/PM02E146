@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E146.Views.MapaPage">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#F5F5F5">
+            <Frame CornerRadius="8" Margin="16" BackgroundColor="White">
+                <maps:Map HorizontalOptions="FillAndExpand"
+                          VerticalOptions="FillAndExpand" x:Name="mapa" IsShowingUser="True"/>
+            </Frame>
+            <Button Text="Compartir Ubicacion" x:Name="btnCompartirUbicacion" Clicked="btnCompartirUbicacion_Clicked"
+                    BackgroundColor="#FFD600" TextColor="Black" Margin="16,8,16,16"
+                    CornerRadius="8" HeightRequest="48" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

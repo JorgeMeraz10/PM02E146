@@ -2,8 +2,65 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PM2E146.Views.ListaSitiosPage">
-    
-    
-    
-    
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Convertidor:ByteImageConvert x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <ScrollView>
+                <ListView x:Name="listasitiopage" ItemTapped="listpage_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Source="{Binding imagen, Converter={StaticResource ImageConvert}}"
+                                           WidthRequest="50" HeightRequest="50"
+                                           HorizontalOptions="Center"
+                                           Margin="0,0,10,0" />
+
+                                    <Label Grid.Column="1"
+                                           Text="{Binding descripcion}"
+                                           TextColor="Black"
+                                           LineBreakMode="WordWrap" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+            <Grid Padding="20" Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnEliminar"
+                        Text="Eliminar Sitio"
+                        WidthRequest="150"
+                        Clicked="btnEliminar_Clicked"
+                        BackgroundColor="Red"
+                        CornerRadius="5"
+                        Margin="0,0,10,0" />
+
+                <Button x:Name="btnvermapa"
+                        Text="Ver Mapa"
+                        WidthRequest="150"
+                        Clicked="btnvermapa_Clicked"
+                        BackgroundColor="Green"
+                        CornerRadius="5"
+                        Grid.Column="1" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+
 </ContentPage>

@@ -2,43 +2,45 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PM2E146.MainPage">
+    
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#F8F8F8">
+            <ScrollView>
+                <StackLayout Margin="20">
 
-    <StackLayout Background="white">
-        <ScrollView>
+                    <Frame BackgroundColor="White" CornerRadius="10" Margin="0,30,0,10">
+                        <Image x:Name="image" WidthRequest="180" HeightRequest="180" Margin="0,10,0,0" HorizontalOptions="Center" Source="">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="AddImage" NumberOfTapsRequired="1"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
 
-            <StackLayout Background="white">
+                    <Label Text="Latitud:" FontSize="18" TextColor="#333333" Margin="0,10,0,0" />
+                    <Frame BackgroundColor="White" CornerRadius="10" Margin="0,0,0,10">
+                        <Entry x:Name="latitud" Keyboard="Numeric" Placeholder="Latitud" TextColor="#333333" IsReadOnly="True" />
+                    </Frame>
 
-              
-                <Image x:Name="img"  BackgroundColor="White" WidthRequest="180" HeightRequest="180" Margin="30,0,30,10" HorizontalOptions="Center" Source="anadir.png">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="AddImg" NumberOfTapsRequired="1"/>
-                    </Image.GestureRecognizers>
-                </Image>
+                    <Label Text="Longitud:" FontSize="18" TextColor="#333333" Margin="0,10,0,0" />
+                    <Frame BackgroundColor="White" CornerRadius="10" Margin="0,0,0,10">
+                        <Entry x:Name="longitud" Keyboard="Numeric" Placeholder="Longitud" TextColor="#333333" IsReadOnly="True" />
+                    </Frame>
 
+                    <Label Text="Descripción:" FontSize="18" TextColor="#333333" Margin="0,10,0,0" />
+                    <Frame BackgroundColor="White" CornerRadius="10" Margin="0,0,0,10">
+                        <Editor x:Name="descripcion" Keyboard="Text" Placeholder="Descripción" HeightRequest="120" TextColor="#333333" />
+                    </Frame>
 
-                <Label Margin="30,0,0,0" FontSize="18" TextColor="Black">Latitud:</Label>
-                <Frame CornerRadius="4" Margin="30, 0, 30, 10" Padding="3">
-                    <Entry x:Name="txtlatitud" Keyboard="Numeric" Placeholder="Latitud" TextColor="Black" IsReadOnly="True"/>
-                </Frame>
+                    <Button Text="Agregar" x:Name="btnAgregar" BackgroundColor="#FF9800" TextColor="White" Clicked="btnAgregar_Clicked" CornerRadius="10" HeightRequest="50" Margin="0,10,0,0" />
+                    <Button Text="Lista de Sitios" x:Name="btnlista" BackgroundColor="#2196F3" TextColor="White" Clicked="btnLista_Clicked" CornerRadius="10" HeightRequest="50" Margin="0,10,0,0" />
+                    <Button Text="Salir" x:Name="btnSalir" BackgroundColor="#4CAF50" TextColor="White" Clicked="btnsalir_Clicked" CornerRadius="10" HeightRequest="50" Margin="0,10,0,30" />
 
-                <Label Margin="30,0,0,0" FontSize="18" TextColor="Black">Longitud:</Label>
-                <Frame CornerRadius="4" Margin="30, 0, 30, 10" Padding="3" >
-                    <Entry x:Name="txtlongitud" Keyboard="Numeric" Placeholder="Longitud" TextColor="Black" IsReadOnly="True"/>
-                </Frame>
-
-                <Label Margin="30,0,0,0" FontSize="18" TextColor="Black">Descripción:</Label>
-                <Frame CornerRadius="4" Margin="30, 0, 30, 10" Padding="3">
-                    <Editor x:Name="txtdescripcion"  Keyboard="Text" Placeholder="Descripción" HeightRequest="120" TextColor="Black"/>
-                </Frame>
-
-                <Button Text="Agregar" x:Name="btnAgregar" Margin="30,0,30,0" Background="orange" TextColor="White" Clicked="btnagregars_Clicked" CornerRadius="4"/>
-                <Button Text="Listar Sitios" x:Name="btnlistar"  Margin="30,0,30,0" Background="dodgerblue" TextColor="White" Clicked="btnlistar_Clicked" CornerRadius="4"/>
-                <Button Text="Salir" x:Name="btnSalir" Margin="30,0,30,10" Background="mediumpurple" TextColor="White" Clicked="btnsalir_Clicked" CornerRadius="4"/>
-
-            </StackLayout>
-        </ScrollView>
-
-    </StackLayout>
-
-
+                </StackLayout>
+            </ScrollView>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+    
 </ContentPage>
